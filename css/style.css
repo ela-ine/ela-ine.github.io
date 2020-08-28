@@ -1,28 +1,44 @@
 
 body{
-    
     width: 100% !important;
     height: 100% !important;
     overflow-x: hidden;
+    margin: 0;
     text-rendering: optimizeLegibility;
    -webkit-font-smoothing: subpixel-antialiased;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
    font-size: 1rem;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
+   font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
     font-family: ivypresto-display, serif;
     font-size: 50px;
+    margin: 0;
 }
 
 h3 {
+    font-family: 'Alata', sans-serif;
+    font-size: 30px;
+    margin: 0;
+}
 
+a {
+    color: #364d5b;
+    text-decoration: none;
+}
+
+button {
+    padding: 15px;
+    background-color: rgb(240, 222, 200);
+    border: 1px outset rgb(240, 222, 200);
+    font-family: 'Alata', sans-serif;
+    transition-timing-function: ease-in-out;
+}
+
+button:hover {
+    background-color: linen;
 }
 
 .content {
@@ -31,8 +47,109 @@ h3 {
     padding: 10px;
 }
 
+
+
+/*      HOME       */
+
+.home {
+    margin: 0;
+}
+
+.section {
+    position: relative;
+}
+
+/* BANNER */
 .banner {
-    top: 0px;
-    left: 0px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30%;
+}
+
+.banner h1 {
+    font-size: 72px;
+}
+
+.banner img {
     position: absolute;
+    object-fit: cover;
+    background-attachment: fixed;
+    max-width: 100%;
+    height: auto;
+    z-index: -1;
+    margin-top: -20%;
+}
+
+.banner .content {
+    margin-top: 10%;
+    margin-right: 10%;
+    padding-top: 5%;
+    color: white;
+}
+
+.banner button {
+    margin-top: 5%;
+}
+
+.banner button a {
+    color: saddlebrown;
+}
+
+/* EXPERTISE */
+
+.expertise .content{
+    width: fit-content;
+}
+
+.expertise .header {
+    width: max-content;
+    margin: auto;
+    padding: 5%;
+}
+
+.expertise h3 {
+    color: #aeaeae;
+}
+
+#expertise-table {
+    table-layout: fixed;
+    padding: 10px;
+    width: 80%;
+    margin:auto;
+}
+
+#expertise-table thead {
+    font-family: "Alata", sans-serif;
+    text-align: left;
+    font-size: 36px;
+}
+
+#expertise-table td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+#expertise-table .img-cell {
+    width: 10%;
+    color: white;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: black;
+    position: relative;
+    height: 50px;
+}
+
+.socials {
+    width: 2%;
+    height: 2%;
+    margin: auto;
+}
+
+.socials img {
+    max-width: 100%;
+    object-fit: cover;
 }

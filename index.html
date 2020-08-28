@@ -2,7 +2,14 @@
 <head>
     <title>Elaine Wan</title>
     <link rel="icon" type="image/png" href="./img/logo.png">
+
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="https://use.typekit.net/dmo5wnn.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,15 +21,63 @@
         <a href="./contact.html">Contact</a>
     </div>
     <div class="home">
-        <div class="banner">
-            <img src="./img/me.jpg" class ="banner">
+        <div class="banner section">
+            <img src="./img/me.jpg">
+            <div class="content">
+                <h1>Elaine Wan</h1>
+                <h3>Design & Technology</h3>
+                <p>Hello! I'm a CS/East Asian Studies major at UChicago interested in utilizing design & technology 
+                    to create well-balanced, efficient products to empower the larger community.</p>
+                <button><a href="./about.html">More about me</a></button>
+            </div>
         </div>
-        <div class="content">
-            <h1>Elaine Wan</h1>
-            <h3>Design & Technology</h3>
-            <p>Hello! I'm a CS/East Asian Studies major at UChicago interested in utilizing design & technology 
-                to create well-balanced, efficient products to empower the larger community.</p>
-            <button>More about me</button>
+        <div class="expertise section">
+            <div class="content">
+                <div class="header">
+                    <h3>this is what I've been up to</h3>
+                    <h1>My Experience</h1>
+                </div>
+                <table class="achievements-table" id="expertise-table">
+                    <thead>
+                        <td class="img-cell">img</td>
+                        <td>Designing<br>products</td>
+                        <td class="img-cell">img</td>
+                        <td>Software<br>engineering</td>
+                        <td class="img-cell">img</td>
+                        <td>Empowerment through tech</td>
+                    </thead>
+                    <tr>
+                        <td></td>
+                        <td>
+                            I've dabbled in many kinds of design, but product design has been the most rewarding by far.
+                            Understanding user painpoints and designing around their needs has become my passion — 
+                            working with Long Game Savings, I reworked the onboarding tour to drive up retention of new 
+                            users during the long sign-up process. 
+                        </td>
+                        <td></td>
+                        <td>
+                            I love thinking about how to build technology that addresses different needs — through Uncommon
+                            Hacks, my team and I created a web-based, gameified platform to address financial literacy in 
+                            university-aged students. Summer of 2020, I took on a SWE internship at LucyLabs CryptoFinance,
+                            working on a backend program that retrieved data from 4+ exchanges.
+                        </td>
+                        <td></td>
+                        <td>
+                            I believe that tech has the capability to uplift everyone — as a part of compileHer, I organized
+                            and volunteered in multiple events throughout the year to teach middle school girls in the community
+                            how to code at no cost. Tech can and should be accessible to everyone, especially as CS education 
+                            becomes increasingly critical to having successful and enriching lives.
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </body>
+
+<footer>
+    
+    <div class="socials" id="linkedin">
+        <img src="./img/linkedin.png" href="https://www.linkedin.com/in/elainewan/">
+    </div>
+</footer>
