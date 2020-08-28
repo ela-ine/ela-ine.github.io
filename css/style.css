@@ -30,9 +30,12 @@ a {
 }
 
 button {
-    padding: 15px;
+    margin-top: 5%;
+    padding: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
     background-color: rgb(240, 222, 200);
-    border: 1px outset rgb(240, 222, 200);
+    border: 1px solid rgb(240, 222, 200);
     font-family: 'Alata', sans-serif;
     transition-timing-function: ease-in-out;
 }
@@ -111,6 +114,12 @@ button:hover {
     color: #aeaeae;
 }
 
+.expertise button {
+    width: 60%;
+    padding:10px;
+
+}
+
 #expertise-table {
     table-layout: fixed;
     padding: 10px;
@@ -132,6 +141,12 @@ button:hover {
 #expertise-table .img-cell {
     width: 10%;
     color: white;
+    padding-top: 2%;
+}
+
+#expertise-table img {
+    object-fit: cover;
+    max-width: 100%;
 }
 
 
