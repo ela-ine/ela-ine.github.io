@@ -1,0 +1,21 @@
+
+body{
+    
+    width: 100% !important;
+    height: 100% !important;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: subpixel-antialiased;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   font-size: 1rem;
+}
+
+h1 {
+    font-family: serif, 'IvyPresto Display';
+    font-size: 50px;
+}
+
+.home {
+    width: 50%;
+}
