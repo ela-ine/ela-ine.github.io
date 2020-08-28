@@ -11,11 +11,28 @@ body{
    font-size: 1rem;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 h1 {
     font-family: ivypresto-display, serif;
     font-size: 50px;
 }
 
-.home {
+h3 {
+
+}
+
+.content {
     width: 50%;
+    margin: auto;
+    padding: 10px;
+}
+
+.banner {
+    top: 0px;
+    left: 0px;
+    position: absolute;
 }
