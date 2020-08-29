@@ -124,7 +124,6 @@ button, .button {
 }
 
 .home-header {
-    width: max-content;
     margin: auto;
     padding: 5%;
 }
@@ -172,8 +171,22 @@ button, .button {
 }
 
 .expertise .button {
-    padding-left:20%;
-    padding-right:20%;
+    padding-left:10%;
+    padding-right:10%;
+}
+
+.expertise .home-header {
+    margin-left: 20%;
+}
+
+.expertise .icon {
+    float:left;
+    width: 30%;
+    margin-left: 15%;
+}
+
+.icon img {
+    max-width: 100%;
 }
 
 #expertise-table {
@@ -232,24 +245,63 @@ footer p {
 /*                   PROJECTS                   */
 /* -------------------------------------------- */
 
-#skills {
-    width: 90vh;
+#projects .section {
+    width: 60%;
     margin:auto;
+    padding: 3%;
 }
 
 #skills .display-table i {
     color: #86bee0;
 }
 
+#skills .img-cell {
+    padding-top: 1%;
+    width: 11%;
+}
+
+#skills thead td {
+    padding-bottom: 0px;
+}
+
 .quicklinks {
     padding-top: 1%;
+    background-color: white;
 }
 
 .quicklinks a {
     padding: 1%;
+    font-size: 20px;
 }
 
 .projects-header {
     text-align: center;
     padding: 5%;
+}
+
+#painting {
+    padding: 5%;
+    background-image: url("../img/mt-doodle.JPG");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: 600;
+}
+
+#painting .section {
+    background-color: rgba(255, 255, 255, 0.8); 
+    backdrop-filter: blur(5px);
+}
+
+.carousel-item {
+    padding: 5%;
+    padding-left:0;
+    width: 40%;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 25px 25px 0 0;
 }
