@@ -1,4 +1,8 @@
 
+$(function(){
+  $("#nav-placeholder").load("nav.html");
+});
+
 function open_nav() {
     document.getElementById("navbar").style.width = "250px";
   }
