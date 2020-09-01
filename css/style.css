@@ -17,6 +17,7 @@ h1 {
     font-family: ivypresto-display, serif;
     font-size: 60px;
     margin: 0;
+    font-weight: 600;
 }
 
 h2 {
@@ -75,17 +76,17 @@ button, .button {
     color: #1f1e1d;
 }
 
-.content {
+/* .content {
     width: 50%;
     margin: auto;
     padding: 10px;
-}
+} */
 
 /* DISPLAY TABLE */
 .display-table {
-    table-layout: fixed;
+    /* table-layout: fixed; */
     padding: 10px;
-    margin:auto;
+    /* margin:auto; */
 }
 
 .display-table thead {
@@ -101,7 +102,7 @@ button, .button {
 }
 
 .display-table .img-cell {
-    width: 10%;
+    /* width: 10%; */
     padding-top: 2%;
 }
 
@@ -145,13 +146,13 @@ button, .button {
 }
 
 .banner .content {
-    margin-right: 10%;
-    padding-top: 13%;
-    color: white;
+    width: 50%;
+    color: #efe6db;
 }
 
 .banner h1 {
     font-size: 72px;
+    font-weight: 800;
 }
 
 .banner img {
@@ -176,13 +177,12 @@ button, .button {
 }
 
 .expertise .home-header {
-    margin-left: 20%;
+    /* margin-left: 20%; */
 }
 
 .expertise .icon {
     float:left;
-    width: 30%;
-    margin-left: 15%;
+    width: 20%;
 }
 
 .icon img {
