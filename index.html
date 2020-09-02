@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <head>
+
     <title>Elaine Wan</title>
+
     <link rel="icon" type="image/png" href="./img/logo.png">
 
     <!-- Javascript -->
@@ -10,112 +12,168 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="https://use.typekit.net/dmo5wnn.css">
     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
+
+
 <body id="index">
+    <!-- navigation -->
+    <nav id="sidebar">
+
+        <div id="dismiss">
+            <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <ul class="list-unstyled components p-4 pt-5 m-3">
+            <br>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Portfolio</a>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#">Design</a>
+                    </li>
+                    <li>
+                        <a href="#">Code</a>
+                    </li>
+                    <li>
+                        <a href="#">Painting</a>
+                    </li>
+                    <li>
+                        <a href="#">Fabrication</a>
+                    </li>
+                    <li>
+                        <a href="#">Film</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <button type="button" id="sidebarCollapse">
+        <div class="bar h-20 m-2 mt-4"></div>
+        <div class="bar h-20 m-2"></div>
+        <div class="bar h-20 m-2"></div>
+    </button>
+
+    <!-- page content -->
     <div class="home">
-        <div class="banner container-fluid d-flex">
-            <!-- <img src="./img/me.jpg"> -->
-            <div class="content container align-self-center float-lg-right">
+
+        <!-- banner -->
+        <div class="banner container-fluid row">
+            <!-- banner content -->
+            <div class="content col-md-6 offset-md-4 p-md-5 my-auto col-11">
                 <h1>Elaine Wan</h1>
-                <h3>Design & Technology</h3>
-                <p>Hello! I'm a CS/East Asian Studies major at UChicago interested in utilizing design & technology 
-                    to create well-balanced, efficient products to empower the larger community.</p>
+                <h3 class="mb-3">Design & Technology</h3>
+                <p>
+                    Hello! I'm a CS/East Asian Studies major at UChicago interested in utilizing design & technology 
+                    to create well-balanced, efficient products to empower the larger community.
+                </p>
                 <br>
                 <a class="dark-button button" href="./about.html">More about me</a>
             </div>
         </div>
 
+        <!-- experience -->
         <div class="expertise section">
-            <div class="content container">
-                <div class="icon px-2 mx-5"><img src="./img/logo.png"></div>
-                <div class="container mt-5 pt-5 col-md-5">
-                    <h3>what I've been up to</h3>
-                    <h1>My Experience</h1>
-                    <br><br>
-                    <a class="light-button button" href="./projects.html">See my projects</a>
+            <div class="display-table container mt-5 mb-5">
+
+                <div class="row">
+                    <div class="col-md-5 pt-5 mt-5 px-0">
+                        <div class="icon mt-3"><img src="./img/logo.png"></div>
+                        <div class="home-header pt-2">
+                            <h3 class="p-3">what I've been up to</h3>
+                            <h1>My Experience</h1>
+                            <br><br>
+                            <a class="light-button button" href="./projects.html">See my projects</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-7 p-5">
+                        <div class="row pb-4">
+                            <div class="col-md-2 col-5 pt-1">
+                                <img src="./img/design.png">
+                            </div>
+
+                            <div class="col-md-10">
+                                <h2>Designing products</h2>
+                                <br>
+                                <p>I've dabbled in many kinds of design, but product design has been the most rewarding by far.
+                                    Understanding user painpoints and designing around their needs has become my passion — 
+                                    working with Long Game Savings, I reworked the onboarding tour to drive up retention of new 
+                                    users during the long sign-up process. </p>
+                            </div>
+                        </div>
+
+                        <div class="row pb-4">
+                            <div class="col-md-2 col-5">
+                                <img src="./img/swe.png">
+                            </div>
+
+                            <div class="col-md-10">
+                                <h2>Software engineering</h2>
+                                <br>
+                                <p>
+                                    I love thinking about how to build technology that addresses different needs — through Uncommon
+                                    Hacks, my team and I created a web-based, gameified platform to address financial literacy in 
+                                    university-aged students. Summer of 2020, I took on a SWE internship at LucyLabs CryptoFinance,
+                                    working on a backend program that retrieved data from 4+ exchanges.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-2 mw-50 pt-2 col-5 pb-2">
+                                <img src="./img/empower.png">
+                            </div>
+
+                            <div class="col-md-10">
+                                <h2>Empowering <br>through tech</h2>
+                                <br>
+                                <p>
+                                    I believe that tech has the capability to uplift everyone — as a part of compileHer, I organized
+                                    and volunteered in multiple events throughout the year to teach middle school girls in the community
+                                    how to code at no cost. Tech can and should be accessible to everyone, especially as CS education 
+                                    becomes increasingly critical to having successful and enriching lives.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="display-table container mt-5">
-                <div class="p-1 row">
-                    <div class="col-md-1 w-10">
-                        <img src="./img/design.png">
-                    </div>
-                    <div class="col-md-3">
-                        <h2>Designing<br>products</h2>
-                        <br>
-                        <p>I've dabbled in many kinds of design, but product design has been the most rewarding by far.
-                            Understanding user painpoints and designing around their needs has become my passion — 
-                            working with Long Game Savings, I reworked the onboarding tour to drive up retention of new 
-                            users during the long sign-up process. </p>
-                    </div>
-                    <div class="col-md-1 mw-50 pt-1">
-                        <img src="./img/swe.png">
-                    </div>
-                    <div class="col-md-3">
-                        <h2>Software<br>engineering</h2>
-                        <br>
-                        <p>
-                            I love thinking about how to build technology that addresses different needs — through Uncommon
-                            Hacks, my team and I created a web-based, gameified platform to address financial literacy in 
-                            university-aged students. Summer of 2020, I took on a SWE internship at LucyLabs CryptoFinance,
-                            working on a backend program that retrieved data from 4+ exchanges.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-                <!-- <table class="display-table" id="expertise-table">
-                    <thead>
-                        <td class="img-cell"><img src="./img/design.png"></td>
-                        <td>Designing<br>products</td>
-                        <td class="img-cell"><img src="./img/swe.png"></td>
-                        <td>Software<br>engineering</td>
-                        <td class="img-cell"><img src="./img/empower.png"></td>
-                        <td>Empowerment through tech</td>
-                    </thead>
-                    <tr>
-                        <td></td>
-                        <td>
-                            I've dabbled in many kinds of design, but product design has been the most rewarding by far.
-                            Understanding user painpoints and designing around their needs has become my passion — 
-                            working with Long Game Savings, I reworked the onboarding tour to drive up retention of new 
-                            users during the long sign-up process. 
-                        </td>
-                        <td></td>
-                        <td>
-                            I love thinking about how to build technology that addresses different needs — through Uncommon
-                            Hacks, my team and I created a web-based, gameified platform to address financial literacy in 
-                            university-aged students. Summer of 2020, I took on a SWE internship at LucyLabs CryptoFinance,
-                            working on a backend program that retrieved data from 4+ exchanges.
-                        </td>
-                        <td></td>
-                        <td>
-                            I believe that tech has the capability to uplift everyone — as a part of compileHer, I organized
-                            and volunteered in multiple events throughout the year to teach middle school girls in the community
-                            how to code at no cost. Tech can and should be accessible to everyone, especially as CS education 
-                            becomes increasingly critical to having successful and enriching lives.
-                        </td>
-                    </tr>
-                </table> -->
             </div>
         </div>
 
-        <div class="connect section">
-            <div class="home-header">
+        <!-- let's connect! -->
+        <div class="connect section py-5 ">
+            <div class="home-header m-auto">
                 <h3>where we get to know each other</h3>
+                <br>
                 <h1>Let's connect!</h1>
+                <br>
                 <p>
                     <a href="https://www.linkedin.com/in/elainewan/">LinkedIn</a>
                     • <a href="elainewan@uchicago.edu">Email</a>
                 </p>
+                <br>
                 <p>
                     I'm always excited to learn about new opportunities and different experiences, or even just sit down for a chat.
                     <br>
@@ -128,9 +186,9 @@
     </div>
 </body>
 
-<footer> 
+<footer class="container-fluid"> 
     <p>
-        made with many frantic google searches :)
+        made with many frantic google searches, bootstrap, and malihu :)
     </p>
     <p>© Elaine Wan</p>
 </footer>
