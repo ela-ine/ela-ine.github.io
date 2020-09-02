@@ -440,8 +440,8 @@ footer p {
 /* -------------------------------------------- */
 
 #about .section {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
     width: 75%;
     margin: auto;
 }
@@ -457,6 +457,11 @@ footer p {
 
 .emph {
     background-color: #f7eee3;
+}
+
+#about .row img {
+    width: 100%;
+    padding: 10px;
 }
 
 
