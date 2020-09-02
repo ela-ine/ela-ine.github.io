@@ -1,20 +1,3 @@
-
-@media only screen and (max-width: 500px) {
-    #sidebar {
-      width: 100vw;
-      right: -100vw;
-      padding: 5vw;
-    }
-
-    .banner .content {
-        margin: auto;
-    }
-    
-    .logo {
-        position: initial;
-    }
-}
-
 body{
     width: 100% !important;
     height: 100% !important;
@@ -50,26 +33,35 @@ h3 {
     margin: 0;
 }
 
+h4 {
+    font-family: sofia-pro, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ec9a9a;
+}
+
 a {
     color: #ac8b7c;
     text-decoration: none;
+    font-weight: 600;
+    font-family: sofia-pro, sans-serif;
 }
 
 a:hover {
     text-decoration: none;
-    color: #ffb1b1;
+    color: #ec9a9a;
     transition: 0.3s;
 }
 
 .logo {
-    top: 20px;
-    left: 20px;
+    top: 30px;
+    left: 40px;
     position: fixed;
     z-index: 20
 }
 
 .logo img {
-    width: 50px;
+    width: 100px;
 }
 
 /* ------------- BUTTON ------------- */
@@ -161,11 +153,9 @@ button:focus {
     right: -300px;
     height: 100vh;
     z-index: 999;
-    /* background: #1f1e1d; */
     background-image: linear-gradient(#3f6dbb, #F7889B);
     color: #fff;
     transition: all 0.3s;
-    overflow-y: scroll;
 }
 
 #sidebar.active {
@@ -369,13 +359,13 @@ a.article:hover {
 /* ------------ FOOTER ------------ */
 
 footer {
-    background-color: #3f6dbb;
+    background-color: #f7eee3;
     position: relative;
     padding: 1%;
 }
 
 footer p {
-    color: white;
+    color: #ac8b7c;
     margin: auto;
     text-align: center;
 }
@@ -386,21 +376,9 @@ footer p {
 /* -------------------------------------------- */
 
 #projects .section {
-    width: 75%;
+    width: 80%;
     margin:auto;
     padding: 3%;
-}
-
-#skills .display-table i {
-    color: #3f6dbb;
-}
-
-#skills img {
-    width: 100%;
-}
-
-#skills thead td {
-    padding-bottom: 0px;
 }
 
 .quicklinks {
@@ -413,9 +391,21 @@ footer p {
     font-size: 20px;
 }
 
-.projects-header {
+.header {
     text-align: center;
-    padding-top: 12vh;
+    padding-top: 15vh;
+}
+
+#skills i {
+    color: #ac8b7c;
+}
+
+#skills img {
+    width: 100%;
+}
+
+#skills div>ul {
+    padding-left: 20px;
 }
 
 #painting {
@@ -443,4 +433,58 @@ footer p {
     max-width: 100%;
     object-fit: cover;
     border-radius: 25px 25px 0 0;
+}
+
+/* -------------------------------------------- */
+/*                    ABOUT                     */
+/* -------------------------------------------- */
+
+#about .section {
+    padding-top: 20vh;
+    width: 75%;
+    margin: auto;
+}
+
+#about .socials, .socials a {
+    color: #3f6dbb;
+    text-align: center;
+}
+
+#about .socials a:hover {
+    color: #ec9a9a;
+}
+
+
+
+/* -------------------------------------------- */
+/*                    MEDIA                     */
+/* -------------------------------------------- */
+@media only screen and (max-width: 500px) {
+    #sidebar {
+      width: 100vw;
+      right: -100vw;
+      padding: 5vw;
+    }
+
+    .banner .content {
+        margin: auto;
+        padding-top: 70px;
+    }
+    
+    .logo {
+        position: absolute;
+        margin: 10px;
+    }
+
+    #projects .logo {
+        top:0;
+        left: 0;
+        position: relative;
+        margin: auto;
+        padding-top: 5vh;
+    }
+
+    .header {
+        padding-top: 5vh;
+    }
 }

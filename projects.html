@@ -22,75 +22,95 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://use.typekit.net/dmo5wnn.css">
-    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body id="projects">
-    <div class="logo">
-        <a href="index.html"><img src="img/icon.png"></a>
-    </div>
-    <!-- navigation -->
-    <nav id="sidebar">
-
-        <div id="dismiss">
-            <i class="fas fa-arrow-right"></i>
+    <div class="nav">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.png"></a>
         </div>
-
-        <ul class="list-unstyled components p-4 pt-5 m-3">
-            <br>
-            <li>
-                <a href="index.html">About</a>
-            </li>
-            <li>
-                <a href="#">Projects</a>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#">Design</a>
-                    </li>
-                    <li>
-                        <a href="seek/home.html">Code</a>
-                    </li>
-                    <li>
-                        <a href="#">Painting</a>
-                    </li>
-                    <li>
-                        <a href="#">Fabrication</a>
-                    </li>
-                    <li>
-                        <a href="#">Film</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-    </nav>
+        <!-- navigation -->
+        <nav id="sidebar">
     
-    <button type="button" id="sidebarCollapse">
-        <div class="bar h-20 m-2 mt-4"></div>
-        <div class="bar h-20 m-2"></div>
-        <div class="bar h-20 m-2"></div>
-    </button>
+            <div id="dismiss">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+    
+            <ul class="list-unstyled components p-4 pt-5 m-3">
+                <br>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="#">Projects</a>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#">Design</a>
+                        </li>
+                        <li>
+                            <a href="seek/home.html">Code</a>
+                        </li>
+                        <li>
+                            <a href="#">Painting</a>
+                        </li>
+                        <li>
+                            <a href="#">Fabrication</a>
+                        </li>
+                        <li>
+                            <a href="#">Film</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <button type="button" id="sidebarCollapse">
+            <div class="bar h-20 m-2 mt-4"></div>
+            <div class="bar h-20 m-2"></div>
+            <div class="bar h-20 m-2"></div>
+        </button>
+    </div>
 
-    <div class="projects-header px-3">
+    <div class="header px-3">
         <h1>Projects</h1>
         <div class="quicklinks">
-            <a href="#design">DESIGN</a>
-            <a href="#code">CODE</a>
-            <a href="#painting">PAINTING</a>
-            <a href="#film">FABRICATION</a>
-            <a href="#film">FILM</a>
+            <h3>
+                <a href="#design">DESIGN</a>
+                <a href="#code">CODE</a>
+                <a href="#painting">PAINTING</a>
+                <a href="#film">FABRICATION</a>
+                <a href="#film">FILM</a>
+            </h3>
         </div>
     </div>
 
     <div id="skills" class="section container-fluid my-5">
         <h2>SKILLS</h2>
-        <br>
+        <hr><br>
         <div class="row">
+            <div class="col-md-1 col-3">
+                <img src="img/product.png">
+            </div>
+
+            <div class="col-md-3 pt-1">
+                <h3>Product</h3>
+                <br>
+                <ul>
+                    <li>User research</li>
+                    <li>Agile</li>
+                    <li>Mobile design</li>
+                    <li>Wireframing, prototyping</li>
+                    <li>Web development</li>
+                </ul>
+            </div>
+
             <div class="col-md-1 col-3 pt-1">
                 <img src="img/design.png">
             </div>
@@ -112,7 +132,7 @@
                 </ul>
             </div>
 
-            <div class="col-md-1 col-1">
+            <div class="col-md-1 col-3">
                 <img src="img/swe.png">
             </div>
 
@@ -127,25 +147,21 @@
                     <li>Javascript <i>basic</i></li>
                     <li>jQuery <i>basic</i></li>
                     <li>SQLite <i>basic</i></li>
-                    <li>C#</li>
-                    <li>Unity</li>
-                </ul>
-            </div>
-
-            <div class="col-md-1 col-1">
-                <img src="img/product.png">
-            </div>
-
-            <div class="col-md-3 pt-1">
-                <h3>Product</h3>
-                <br>
-                <ul>
-                    <li>Web development & design</li>
-                    <li>Mobile design</li>
-                    <li>Agile software development</li>
                 </ul>
             </div>
         </div>
+    </div>
+
+    <div id="design" class="section py-5 my-5">
+        <h2>DESIGN</h2>
+        <br>
+        <p>
+            Design brings together my passionn for aesthetically pleasing visuals and functional,
+            practical tools that can benefit a group of people. I first started my journey in design 
+            with paper publications (magazines, posters, etc), then advanced to mobile and web design.
+        </p>
+        <a href="design.html">Take a look at my past projects.</a>
+
     </div>
 
     <div id="painting">
@@ -167,7 +183,7 @@
     <div id="film" class="section">
         <h2>FILM</h2>
         <p>
-            I soon began taking an interest in photography, and got to know the wonderful complexities of DSLRs.
+            I began taking an interest in photography in 2013, and got to know the wonderful complexities of DSLRs.
             This led me to look at lighting and composition more critically, as I delved into both creative and commercial
             filmmaking.
         </p>
@@ -188,17 +204,9 @@
 
     </div>
 
-    <div id="design" class="section">
-        <h2>DESIGN</h2>
-        <br>
-        <p>
-
-        </p>
-
-    </div>
-
 </body>
 
-<footer>
-
+<footer class="container-fluid"> 
+    <p>made with many frantic google searches, bootstrap, and malihu :)</p>
+    <p>© Elaine Wan</p>
 </footer>
