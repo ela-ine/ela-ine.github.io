@@ -1,4 +1,20 @@
 
+@media only screen and (max-width: 500px) {
+    #sidebar {
+      width: 100vw;
+      right: -100vw;
+      padding: 5vw;
+    }
+
+    .banner .content {
+        margin: auto;
+    }
+    
+    .logo {
+        position: initial;
+    }
+}
+
 body{
     width: 100% !important;
     height: 100% !important;
@@ -35,14 +51,25 @@ h3 {
 }
 
 a {
-    color: #86bee0;
+    color: #ac8b7c;
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: none;
-    color: #f7eee3;
+    color: #ffb1b1;
     transition: 0.3s;
+}
+
+.logo {
+    top: 20px;
+    left: 20px;
+    position: fixed;
+    z-index: 20
+}
+
+.logo img {
+    width: 50px;
 }
 
 /* ------------- BUTTON ------------- */
@@ -60,16 +87,16 @@ button, .button {
 }
 
 button:focus {
-    outline-color: #1B1D22;
+    outline-color: transparent;
 }
 
 .light-button {
-    border: 1px solid #86bee0;
-    color: #86bee0;
+    border: 1px solid #3f6dbb;
+    color: #3f6dbb;
 }
 
 .light-button:hover {
-    background-color: #86bee0;
+    background-color: #3f6dbb;
     color: white;
 }
 
@@ -116,7 +143,7 @@ button:focus {
 }
 
 #sidebarCollapse .bar {
-    background-color: #86bee0;
+    background-color: #ac8b7c;
     height: 2px;
 }
 
@@ -143,18 +170,6 @@ button:focus {
 
 #sidebar.active {
     right: 0;
-}
-
-@media only screen and (max-width: 1400px) {
-    #sidebar {
-      width: 100vw;
-      right: -100vw;
-      padding: 5vw;
-    }
-
-    .banner .content {
-        margin: auto;
-    }
 }
 
 #sidebar a {
@@ -239,9 +254,9 @@ a.article:hover {
 }
 
 
-/* -------------------------------------------- 
-    HOME                      
- -------------------------------------------- */
+/* -------------------------------------------- */
+/*                      HOME                    */
+/* -------------------------------------------- */
 
 .home {
     margin: 0;
@@ -263,11 +278,11 @@ a.article:hover {
     padding-bottom: 3%;
 }
 
-/* BANNER */
+/* ------------ BANNER ------------ */
 .banner {
     width: 100vw;
     height:100vh;
-    background-image: url("../img/me.jpg");
+    background-image: url("../img/me.JPG");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -295,7 +310,7 @@ a.article:hover {
     z-index: -1;
 }
 
-/* EXPERTISE */
+/* ------------ EXPERTISE ------------ */
 
 .expertise .content{
     width: fit-content;
@@ -320,17 +335,8 @@ a.article:hover {
     max-width: 100%;
 }
 
-#expertise-table {
-    width: 80%;
-    table-layout: fixed;
-}
 
-#expertise-table thead {
-    font-size: 36px;
-}
-
-/* CONNECT */
-
+/* ------------ CONNECT ------------ */
 .connect {
     background-color: #1f1e1d;
     padding: 5%;
@@ -352,13 +358,18 @@ a.article:hover {
     font-family: sofia-pro, serif;
     font-weight: 600;
     font-size: 20px;
+    color: #F7889B;
+}
+
+.connect p>a:hover {
+    color: #f7eee3;
 }
 
 
-/* FOOTER */
+/* ------------ FOOTER ------------ */
 
 footer {
-    background-color: #ac8b7c;
+    background-color: #3f6dbb;
     position: relative;
     padding: 1%;
 }
@@ -375,18 +386,17 @@ footer p {
 /* -------------------------------------------- */
 
 #projects .section {
-    width: 60%;
+    width: 75%;
     margin:auto;
     padding: 3%;
 }
 
 #skills .display-table i {
-    color: #86bee0;
+    color: #3f6dbb;
 }
 
-#skills .img-cell {
-    padding-top: 1%;
-    width: 11%;
+#skills img {
+    width: 100%;
 }
 
 #skills thead td {
@@ -405,7 +415,7 @@ footer p {
 
 .projects-header {
     text-align: center;
-    padding: 5%;
+    padding-top: 12vh;
 }
 
 #painting {

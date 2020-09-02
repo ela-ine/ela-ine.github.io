@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset= "utf-8">
+    <title>PLAY</title>
+    <link href="SEEK.css" type="text/css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+    <img src="./img/game1_background.png" class="background" id="play-background">
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a class="active" href="game1.html">Play</a></li>
+        <li><a href="learn.html">Learn</a></li>
+      </ul>
+    </nav>
+  </head>
+
+  <body>
+    <div class="multi-choice">
+      <div class="timer">
+      <label id="minutes">00</label>:<label id="seconds">00</label>
+      </div>
+      <div class="question-set" id=1 style="display: block;">
+        <h2 class="testQ">What is a mortgage?</h2>
+        <div class="choices">
+          <div class="choice" id=0>a) A loan to help pay off the hundreds of thousands you owe in student debt</div>
+          <div class="choice" id=0>b) A retirement plan so you can live the rest of your life in peace, isolated from the rest of the world</div>
+          <div class="choice" id=1>c) A special loan to buy a house</div>
+          <div class="choice" id=0>d) A contract to rent an apartment because you can’t afford a house</div>
+        </div>
+      </div>
+
+      <div class="question-set" id=2>
+        <h2 class="testQ">Why is a good credit score important?</h2>
+        <div class="choices">
+          <div class="choice" id=0>a) Credit scores are a scam by the US government in order to swamp everyone in debt</div>
+          <div class="choice" id=0>b) Having a good credit score will give you a tax deduction</div>
+          <div class="choice" id=0>c) So you can brag to all of your friends about your amazing trustworthiness and convince them to let you manage their money</div>
+          <div class="choice" id=1>d) So you can secure a loan and/or a mortgage should you need one</div>
+        </div>
+      </div>
+
+      <div class="question-set" id=3>
+        <h2 class="testQ">As a poor college student, what type of tax is most injurious to your wallet?</h2>
+        <div class="choices">
+          <div class="choice" id=0>a) Progressive tax</div>
+          <div class="choice" id=1>b) Regressive tax</div>
+          <div class="choice" id=0>c) Proportional tax</div>
+          <div class="choice" id=0>d) None, I love taxes!</div>
+        </div>
+      </div>
+
+      <div class="question-set" id=4>
+        <h2 class="testQ">What is important to consider before taking out a loan?</h2>
+        <div class="choices">
+          <div class="choice" id=0>a) Picking a loan with a high interest rate, so the bank will pay you money</div>
+          <div class="choice" id=0>b) Borrowing money that you can’t pay back, because debt is fun</div>
+          <div class="choice" id=1>c) Ensuring you can pay each installment on time, because debt is not fun</div>
+          <div class="choice" id=0>d) All of the above</div>
+        </div>
+      </div>
+
+      <div class="question-set" id=5>
+        <h2 class="testQ">Before filing taxes, what should you do?</h2>
+        <div class="choices">
+          <div class="choice" id=0>a) Call your parents to ask if you are a dependant under their name</div>
+          <div class="choice" id=0>b) Find your W2 and 1098-T/1099 papers</div>
+          <div class="choice" id=0>c) Pick out which 1040 form you prefer to use</div>
+          <div class="choice" id=1>d) All of the above</div>
+        </div>
+      </div>
+
+      <div class="question-set" id=6>
+        <h2 class="testQ">8. What type of bank account do you use to deposit and withdraw money in everyday life?</h2>
+        <div class="choices">
+          <div class="choice" id=0>a) Savings account</div>
+          <div class="choice" id=1>b) Checking account</div>
+          <div class="choice" id=0>c) Money market account</div>
+          <div class="choice" id=0>d) Retirement account</div>
+        </div>
+      </div>
+
+      <div class="question-set" id=7>
+        <h2 class="testQ">What is a 401K plan?</h2>
+        <div class="choices">
+          <div class="choice" id=0>a) A plan to help pay for your college education</div>
+          <div class="choice" id=0>b) A loan to pay for a house</div>
+          <div class="choice" id=1>c) We didn’t talk about this...</div>
+          <div class="choice" id=0>d) A method to boost your credit score</div>
+        </div>
+      </div>
+    </div>
+
+    <img src="taxes.gif" id="sprite">
+    <a href="game2.html"><div id="tax-defeat">
+      <p>You've defeated all of the tax forms!</p>
+      <p>On to the next enemy!</p>
+    </div></a>
+
+    <script>
+    var minutesLabel = document.getElementById("minutes");
+    var secondsLabel = document.getElementById("seconds");
+    var totalSeconds = 0;
+    setInterval(setTime, 1000);
+
+    function nextTest(index) {
+      var prevSet = document.getElementById(index)
+      var integerIndex = parseInt(index);
+      var nextSet = document.getElementById(integerIndex+1);
+
+      if(integerIndex <= 7) {
+      $(prevSet).fadeOut();
+      $(nextSet).delay(400).fadeIn();
+      } else {
+        $("#tax-defeat").toggle();
+      }
+    }
+
+    $(".choice").click(function(event) {
+      if(event.target.id == 1){
+        var index = $(this).parent().parent().attr('id');
+        alert("correct!");
+        nextTest(index);
+        document.getElementById("minutes").innerHTML = 00
+        document.getElementById("seconds").innerHTML = 00
+        totalSeconds = 0
+      } else {
+        alert("wrong :(");
+     }
+    });
+
+
+    function setTime() {
+      ++totalSeconds;
+      secondsLabel.innerHTML = pad(totalSeconds % 60);
+      minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+    }
+
+    function pad(val) {
+      var valString = val + "";
+      if (valString.length < 2) {
+        return "0" + valString;
+      } else {
+        return valString;
+      }
+    }
+
+    </script>
+
+  </body>
+</html>
