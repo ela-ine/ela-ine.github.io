@@ -348,7 +348,7 @@ a.article:hover {
     font-family: sofia-pro, serif;
     font-weight: 600;
     font-size: 20px;
-    color: #F7889B;
+    color: #ec9a9a;
 }
 
 .connect p>a:hover {
@@ -376,7 +376,7 @@ footer p {
 /* -------------------------------------------- */
 
 #projects .section {
-    width: 80%;
+    width: 70%;
     margin:auto;
     padding: 3%;
 }
@@ -393,7 +393,7 @@ footer p {
 
 .header {
     text-align: center;
-    padding-top: 15vh;
+    padding-top: 20vh;
 }
 
 #skills i {
@@ -406,6 +406,22 @@ footer p {
 
 #skills div>ul {
     padding-left: 20px;
+}
+
+.preview {
+    overflow-y: hidden;
+    border: 1px solid #c7c7c7;
+}
+
+.preview img {
+    object-fit: cover;
+    width: 100%;
+    object-position: top;
+}
+
+.preview desc {
+    background-color: white;
+    z-index: 5;
 }
 
 #painting {
@@ -439,11 +455,16 @@ footer p {
 /*                    ABOUT                     */
 /* -------------------------------------------- */
 
+
 #about .section {
     padding-top: 10vh;
     padding-bottom: 10vh;
     width: 75%;
     margin: auto;
+}
+
+#about #about-header {
+    padding-top: 25vh;
 }
 
 #about .socials, .socials a {
@@ -496,5 +517,9 @@ footer p {
 
     .header {
         padding-top: 5vh;
+    }
+
+    #about h1 {
+        text-align: center;
     }
 }
