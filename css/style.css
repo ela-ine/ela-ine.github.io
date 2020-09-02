@@ -441,6 +441,7 @@ footer p {
 
 #about .section {
     padding-top: 20vh;
+    padding-bottom: 20vh;
     width: 75%;
     margin: auto;
 }
@@ -452,6 +453,10 @@ footer p {
 
 #about .socials a:hover {
     color: #ec9a9a;
+}
+
+.emph {
+    background-color: #f7eee3;
 }
 
 
