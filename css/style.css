@@ -354,6 +354,7 @@ a.article:hover {
 .connect {
     background-color: #1f1e1d;
     padding: 5%;
+    width: 100%;
 }
 
 .connect .home-header {
@@ -599,10 +600,6 @@ footer p {
     padding-left: 0;
 }
 
-#film iframe {
-    position: relative;
-}
-
 #lightbox-clone {
     display: block;
     margin: auto;
@@ -619,6 +616,10 @@ footer p {
     position: fixed;
     display: none;
     padding-top: 5vh;
+}
+
+.video {
+
 }
 
 
