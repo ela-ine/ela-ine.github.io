@@ -76,71 +76,129 @@
             <div class="bar h-20 m-2"></div>
         </button>
     </div>
+    <div id="dark-overlay"></div>
 
     <div class="header px-3">
         <h1>FILM</h1>
         <div class="quicklinks">
             <h3>
-                <button id="default-tab" class="tablink"  onclick="openPage('Home', this)">
+                <button id="default-tab" class="tablink"  onclick="openPage('photo', this)">
                     PHOTOGRAPHY
                 </button>
-                <button class="tablink"  onclick="openPage('Home', this)">
+                <button class="tablink"  onclick="openPage('compileher', this)">
                     COMPILEHER
                 </button>
-                <button class="tablink"  onclick="openPage('Home', this)">
+                <button class="tablink"  onclick="openPage('photo', this)">
                     SKEES
                 </button>
-                <button class="tablink"  onclick="openPage('Home', this)">
+                <button class="tablink"  onclick="openPage('photo', this)">
                     CREATIVE
                 </button>
             </h3>
         </div>
     </div>
+
     <div id="photo" class="tabcontent section">
-        <div class="sublinks">
+        <div class="sublinks my-5 bp-link">
             <a href="film.html#food">Food</a>
             <a href="film.html#portraits">Portraits</a>
             <a href="film.html#sports">Sports</a>
             <a href="film.html#theater">Theater</a>
         </div>
+        <div class="line"></div>
 
-        <div id="food" class="row">
-            <div class="col-md-3">
-                <img src="img/film/food/food1.jpeg">
-                <img src="img/film/food/food2.jpeg">
-                <img src="img/film/food/food3.jpeg">
+        <div id="food" class="my-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>FOOD</h2>
+                </div>
+                <div class="col-md-7">
+                    <p>Taken for Que SeRaw SeRaw, a vegan café in the summer of 2017.</p>
+                    <p>These photos were featured in flyers and menus at the time.</p>
+                </div>
             </div>
-            <div class="col-md-3">
-                <img src="img/film/food/food4.jpeg">
-                <img src="img/film/food/food5.jpeg">
-                <img src="img/film/food/food6.jpeg">
+            <br>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <img src="img/film/food/food1.jpeg" onclick="lightbox(this)">
+                    <img src="img/film/food/food2.jpeg" onclick="lightbox(this)">
+                    <img src="img/film/food/food3.jpeg" onclick="lightbox(this)">
+                </div>
+                <div class="col-md-4">
+                    <img src="img/film/food/food7.jpeg" onclick="lightbox(this)">
+                    <img src="img/film/food/food4.jpeg" onclick="lightbox(this)">
+                </div>
+                <div class="col-md-4">
+                    <img src="img/film/food/food5.jpeg" onclick="lightbox(this)">
+                    <img src="img/film/food/food6.jpeg" onclick="lightbox(this)">
+                    <img src="img/film/food/food8.jpeg" onclick="lightbox(this)">
+                    <!-- <img src="img/film/food/food6.jpeg"> -->
+                </div>
             </div>
+
         </div>
     </div>
+    <div id="compileher" class="tabcontent section container">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dDh5AiZIW8M" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div id="skees" class="tabcontent section"></div>
 
 </body>
 
+<footer class="container-fluid"> 
+    <p>made with many frantic google searches, bootstrap, and malihu :)</p>
+    <p>© Elaine Wan</p>
+</footer>
+
+
 <script>
+    function lightbox(img) {
+        var body, clone, open;
+        overlay = document.getElementById("dark-overlay");
+        open = document.getElementsByClassName("open");
+        console.log(open);
+
+        if (open.length >= 1) {
+            for (i= 0; i < open.length; i++) {
+                open[i].classList.remove("open");
+            }
+            img.remove();
+            overlay.style.display = "none";
+        } else {
+            clone = img.cloneNode(true);
+
+            clone.setAttribute("id", "lightbox-clone")
+
+            overlay.style.display = "block";
+            overlay.appendChild(clone);
+
+            img.classList.add("open")
+        }
+    }
+
     function openPage(pageName, elmnt) {
-        console.log(elmnt)
         // Hide all elements with class="tabcontent" by default */
-        var i, tabcontent, tablinks;
+        var i, tabcontent, active;
+        console.log("clicked", elmnt)
         tabcontent = document.getElementsByClassName("tabcontent");
-        console.log(tabcontent)
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
         }
 
         // Remove the background color of all tablinks/buttons
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].style.backgroundColor = "";
+        active = document.getElementsByClassName("active");
+        for (i = 0; i < active.length; i++) {
+            console.log(active[i])
+            active[i].classList.remove("active");
         }
 
         // Show the specific tab content
         document.getElementById(pageName).style.display = "block";
 
-        elmnt.addClass("active");
+        elmnt.classList.add("active");
+        elmnt.classList.add("bkg");
     }
     
     document.getElementById("default-tab").click();

@@ -17,6 +17,10 @@ body{
    color: #1f1e1d
 }
 
+div>img {
+    width: 100%;
+}
+
 h1 {
     font-family: ivypresto-display, serif;
     font-size: 60px;
@@ -63,6 +67,20 @@ a:hover {
     text-decoration: none;
     color: #ec9a9a;
     transition: 0.3s;
+}
+
+.bp-link a {
+    color: #3f6dbb;
+}
+
+.bp-link a:hover {
+    color: #F7889B;
+}
+
+.section {
+    width: 70%;
+    margin: auto;
+    position: relative;
 }
 
 .logo {
@@ -125,11 +143,6 @@ button:focus {
     color: #1f1e1d;
 }
 
-/* .content {
-    width: 50%;
-    margin: auto;
-    padding: 10px;
-} */
 
 /* ---------------------------------------------------
     SIDEBAR
@@ -273,10 +286,6 @@ a.article:hover {
     overflow:hidden;
 }
 
-.section {
-    position: relative;
-}
-
 .home-header {
     margin: auto;
     padding: 5%;
@@ -394,8 +403,6 @@ footer p {
 #about .section {
     padding-top: 10vh;
     padding-bottom: 10vh;
-    width: 75%;
-    margin: auto;
 }
 
 #about #about-header {
@@ -416,7 +423,6 @@ footer p {
 }
 
 #about .row img {
-    width: 100%;
     padding: 10px;
 }
 
@@ -430,8 +436,6 @@ footer p {
 }
 
 #projects .section {
-    width: 70%;
-    margin:auto;
     padding: 3%;
 }
 
@@ -491,6 +495,10 @@ footer p {
     color: #F7889B;
 }
 
+#design .card-body a:hover {
+    color: #3f6dbb;
+}
+
 #design p {
     font-weight: 600;
 }
@@ -506,20 +514,10 @@ footer p {
     transition: 0.3s;
 }
 
-#design a:hover {
-    text-decoration: underline;
+#design-header a:hover {
+    color: #ffbcc7;
 }
 
-
-/* --------------------- CODE --------------------- */
-
-#code a {
-    color: #3f6dbb;
-}
-
-#code a:hover {
-    color: #F7889B
-}
 
 /* --------------------- PAINTING --------------------- */
 #painting {
@@ -565,14 +563,63 @@ footer p {
 /*                    FILM                      */
 /* -------------------------------------------- */
 
-.tabcontent {
-    display: none;
+#film button {
+    color: #ac8b7c;
+    font-size: 20px;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
-#food {
+#film h2 {
+    text-align: center;
+}
+
+#film img:hover {
+    cursor: pointer;
+}
+
+#film .active {
+    background-image: url("../img/design-bkg-blue.jpg");
+    color: white;
+}
+
+.sublinks {
+    text-align: center;
+    font-size: 18px;
+}
+
+.sublinks a {
+    margin: 2%;
+    color: #3f6dbb
+}
+
+#film .row img {
+    padding: 10px;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#film iframe {
+    position: relative;
+}
+
+#lightbox-clone {
+    display: block;
+    margin: auto;
+    height: 90vh;
+    width: auto;
+    z-index: 10;
+}
+
+#dark-overlay {
+    background-color: rgb(31, 30, 29, 0.8);
+    z-index: 5;
     width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    padding-top: 5vh;
 }
-
 
 
 /* -------------------------------------------- */
@@ -595,7 +642,7 @@ footer p {
         margin: 10px;
     }
 
-    #projects .logo {
+    #projects .logo, #film .logo {
         top:0;
         left: 0;
         position: relative;
@@ -613,5 +660,11 @@ footer p {
 
     #projects .section {
         width: 80%; 
+    }
+
+    #lightbox-clone {
+        width: 90vw;
+        height: auto;
+        padding-top: 20vh;
     }
 }
