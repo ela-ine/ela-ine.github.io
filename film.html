@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<head>
+
+    <title>Elaine Wan - Projects</title>
+
+    <link rel="icon" type="image/png" href="./img/logo.png">
+
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/nav.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://use.typekit.net/dmo5wnn.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+
+<body id="film">
+    <div class="nav">
+        <div class="logo">
+            <a href="home.html"><img src="img/logo.png"></a>
+        </div>
+        <!-- navigation -->
+        <nav id="sidebar">
+    
+            <div id="dismiss">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+    
+            <ul class="list-unstyled components p-4 pt-5 m-3">
+                <br>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="projects.html">Projects</a>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#">Design</a>
+                        </li>
+                        <li>
+                            <a href="seek/home.html">Code</a>
+                        </li>
+                        <li>
+                            <a href="#">Painting</a>
+                        </li>
+                        <li>
+                            <a href="#">Fabrication</a>
+                        </li>
+                        <li>
+                            <a href="#">Film</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+        <button type="button" id="sidebarCollapse">
+            <div class="bar h-20 m-2 mt-4"></div>
+            <div class="bar h-20 m-2"></div>
+            <div class="bar h-20 m-2"></div>
+        </button>
+    </div>
+
+    <div class="header px-3">
+        <h1>FILM</h1>
+        <div class="quicklinks">
+            <h3>
+                <button id="default-tab" class="tablink"  onclick="openPage('Home', this)">
+                    PHOTOGRAPHY
+                </button>
+                <button class="tablink"  onclick="openPage('Home', this)">
+                    COMPILEHER
+                </button>
+                <button class="tablink"  onclick="openPage('Home', this)">
+                    SKEES
+                </button>
+                <button class="tablink"  onclick="openPage('Home', this)">
+                    CREATIVE
+                </button>
+            </h3>
+        </div>
+    </div>
+    <div id="photo" class="tabcontent section">
+        <div class="sublinks">
+            <a href="film.html#food">Food</a>
+            <a href="film.html#portraits">Portraits</a>
+            <a href="film.html#sports">Sports</a>
+            <a href="film.html#theater">Theater</a>
+        </div>
+
+        <div id="food" class="row">
+            <div class="col-md-3">
+                <img src="img/film/food/food1.jpeg">
+                <img src="img/film/food/food2.jpeg">
+                <img src="img/film/food/food3.jpeg">
+            </div>
+            <div class="col-md-3">
+                <img src="img/film/food/food4.jpeg">
+                <img src="img/film/food/food5.jpeg">
+                <img src="img/film/food/food6.jpeg">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function openPage(pageName, elmnt) {
+        console.log(elmnt)
+        // Hide all elements with class="tabcontent" by default */
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        console.log(tabcontent)
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Remove the background color of all tablinks/buttons
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+
+        // Show the specific tab content
+        document.getElementById(pageName).style.display = "block";
+
+        elmnt.addClass("active");
+    }
+    
+    document.getElementById("default-tab").click();
+</script>

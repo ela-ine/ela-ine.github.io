@@ -1,3 +1,8 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     width: 100% !important;
     height: 100% !important;
@@ -40,6 +45,13 @@ h4 {
     color: #ec9a9a;
 }
 
+.line {
+    height: 1px;
+    background-image: linear-gradient(to right, #3f6dbb, #F7889B);
+    margin: auto;
+    opacity: 0.7;
+}
+
 a {
     color: #ac8b7c;
     text-decoration: none;
@@ -62,6 +74,13 @@ a:hover {
 
 .logo img {
     width: 100px;
+}
+
+.bkg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* ------------- BUTTON ------------- */
@@ -273,10 +292,6 @@ a.article:hover {
     width: 100vw;
     height:100vh;
     background-image: url("../img/me.JPG");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     margin:0;
     padding:0;
 }
@@ -372,8 +387,47 @@ footer p {
 
 
 /* -------------------------------------------- */
+/*                    ABOUT                     */
+/* -------------------------------------------- */
+
+
+#about .section {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    width: 75%;
+    margin: auto;
+}
+
+#about #about-header {
+    padding-top: 25vh;
+}
+
+#about .socials, .socials a {
+    color: #3f6dbb;
+    text-align: center;
+}
+
+#about .socials a:hover {
+    color: #ec9a9a;
+}
+
+.emph {
+    background-color: #f7eee3;
+}
+
+#about .row img {
+    width: 100%;
+    padding: 10px;
+}
+
+
+/* -------------------------------------------- */
 /*                   PROJECTS                   */
 /* -------------------------------------------- */
+
+#projects .card {
+    border: 1px solid #dedede;
+}
 
 #projects .section {
     width: 70%;
@@ -424,13 +478,53 @@ footer p {
     z-index: 5;
 }
 
+/* --------------------- DESIGN --------------------- */
+#design {
+    background-image: url("../img/design-bkg-blue.jpg");
+}
+
+#design .card, #fabrication .card {
+    border: 1px solid white;
+}
+
+#design .card-body a {
+    color: #F7889B;
+}
+
+#design p {
+    font-weight: 600;
+}
+
+#design-header, #fabrication-header {
+    background-color: rgb(63, 109, 187, 0.6);
+    background-blend-mode: screen;
+    color: white;
+}
+
+#design-header a {
+    color: white;
+    transition: 0.3s;
+}
+
+#design a:hover {
+    text-decoration: underline;
+}
+
+
+/* --------------------- CODE --------------------- */
+
+#code a {
+    color: #3f6dbb;
+}
+
+#code a:hover {
+    color: #F7889B
+}
+
+/* --------------------- PAINTING --------------------- */
 #painting {
     padding: 5%;
-    background-image: url("../img/mt-doodle.JPG");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url("../img/art/mt-doodle.JPG");
     font-weight: 600;
 }
 
@@ -451,38 +545,32 @@ footer p {
     border-radius: 25px 25px 0 0;
 }
 
+
+/* --------------------- FILM --------------------- */
+
+.card .line {
+    width: 90%;
+    background-image: none;
+    background-color: #dedede;
+}
+
+/* --------------------- FABRICATION --------------------- */
+
+#fabrication {
+    background-image: url("../img/fab-bkg.jpg");
+}
+
+
 /* -------------------------------------------- */
-/*                    ABOUT                     */
+/*                    FILM                      */
 /* -------------------------------------------- */
 
-
-#about .section {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-    width: 75%;
-    margin: auto;
+.tabcontent {
+    display: none;
 }
 
-#about #about-header {
-    padding-top: 25vh;
-}
-
-#about .socials, .socials a {
-    color: #3f6dbb;
-    text-align: center;
-}
-
-#about .socials a:hover {
-    color: #ec9a9a;
-}
-
-.emph {
-    background-color: #f7eee3;
-}
-
-#about .row img {
+#food {
     width: 100%;
-    padding: 10px;
 }
 
 
@@ -521,5 +609,9 @@ footer p {
 
     #about h1 {
         text-align: center;
+    }
+
+    #projects .section {
+        width: 80%; 
     }
 }
