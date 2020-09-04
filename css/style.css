@@ -579,7 +579,7 @@ footer p {
     cursor: pointer;
 }
 
-#film .active {
+#film .active-button {
     background-image: url("../img/design-bkg-blue.jpg");
     color: white;
 }
@@ -616,10 +616,12 @@ footer p {
     position: fixed;
     display: none;
     padding-top: 5vh;
+    top: 0;
 }
 
 .video {
-
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 
@@ -666,6 +668,11 @@ footer p {
     #lightbox-clone {
         width: 90vw;
         height: auto;
-        padding-top: 20vh;
+        padding-top: 10vh;
+        z-index: 100;
+    }
+    
+    #dark-overlay {
+        z-index: 99;
     }
 }

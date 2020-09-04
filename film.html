@@ -140,15 +140,40 @@
     </div>
     
     <div id="compileher" class="tabcontent container section">
-        <div class="my-5 embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" width="100%" height="100%" src="https://www.youtube.com/embed/dDh5AiZIW8M" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- capstone animation -->
+        <div class="video">
+            <div class="mb-3 embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" width="100%" height="100%" src="https://www.youtube.com/embed/dDh5AiZIW8M" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p>
+                Opening Ceremony Video for compileHer’s Capstone 2019: “superpowHer”
+                <br> Produced by Elaine Wan with Premiere Pro <br>
+                Artwork by Jessica Xia and Elaine Wan <br>
+                Music from bensound.org
+            </p>
         </div>
-        <div class="my-5 embed-responsive embed-responsive-16by9">
-            <iframe src="https://www.youtube.com/embed/_O6ZITFpa7A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- apple store -->
+        <div class="video">
+            <div class="mb-3 embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.youtube.com/embed/_O6ZITFpa7A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p>
+                Filmed at the Apple Store in downtown Chicago, featuring students from Bret Harte Elementary as well as National Teacher’s Academy
+                <br> Shot and produced by Elaine Wan with Premiere Pro <br>
+                Music from bensound.org
+                <br>
+            </p>
         </div>
-        <div class="my-5 embed-responsive embed-responsive-16by9">
-            <iframe src="https://www.youtube.com/embed/DaER52yMia4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    
+        <!-- bret harte -->
+        <div class="video">
+            <div class="mb-3 embed-responsive embed-responsive-16by9">
+                <iframe src="https://www.youtube.com/embed/DaER52yMia4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+            </div>
+            <p>
+                Filmed at Brete Harte Elementary, featuring their students as well as teachers from compileHer!
+                <br> Co-produced with Anna Zipp
+            </p>
         </div>
     </div>
 
@@ -167,8 +192,15 @@
     </div>
 
     <div id="creative" class="tabcontent section">
-        <div class="my-5 embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/SiveiA4TunA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="video">
+            <div class="mb-3 embed-responsive embed-responsive-16by9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/SiveiA4TunA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p>
+                Starring Cung D. and Elaine Wan
+                <br> Produced by Elaine Wan with Final Cut Pro <br>
+                Filmed at Stanford University through Digital Media Academy, 2016
+            </p>
         </div>
     </div>
 
@@ -215,16 +247,16 @@
         }
 
         // Remove the background color of all tablinks/buttons
-        active = document.getElementsByClassName("active");
+        active = document.getElementsByClassName("active-button");
         for (i = 0; i < active.length; i++) {
             console.log(active[i])
-            active[i].classList.remove("active");
+            active[i].classList.remove("active-button");
         }
 
         // Show the specific tab content
         document.getElementById(pageName).style.display = "block";
 
-        elmnt.classList.add("active");
+        elmnt.classList.add("active-button");
         elmnt.classList.add("bkg");
     }
     
