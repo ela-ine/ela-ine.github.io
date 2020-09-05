@@ -406,10 +406,6 @@ footer p {
     padding-bottom: 10vh;
 }
 
-#about #about-header {
-    padding-top: 25vh;
-}
-
 #about .socials, .socials a {
     color: #3f6dbb;
     text-align: center;
@@ -484,33 +480,33 @@ footer p {
 }
 
 /* --------------------- DESIGN --------------------- */
-#design {
+#design-proj {
     background-image: url("../img/design-bkg-blue.jpg");
 }
 
-#design .card, #fabrication .card {
+#design-proj .card, #fabrication .card {
     border: 1px solid white;
 }
 
-#design .card-body a {
+#design-proj .card-body a {
     color: #F7889B;
 }
 
-#design .card-body a:hover {
+#design-proj .card-body a:hover {
     color: #3f6dbb;
 }
 
-#design p {
+#design-proj p {
     font-weight: 600;
 }
 
-#design-header, #fabrication-header {
+#design-proj-header, #fabrication-header {
     background-color: rgb(63, 109, 187, 0.6);
     background-blend-mode: screen;
     color: white;
 }
 
-#design-header a {
+#design-proj-header a {
     color: white;
     transition: 0.3s;
 }
@@ -564,11 +560,14 @@ footer p {
 /*                    FILM                      */
 /* -------------------------------------------- */
 
-#film button {
+.button-tab {
     color: #ac8b7c;
-    font-size: 20px;
     margin-left: 3%;
     margin-right: 3%;
+}
+
+.tablink {
+    font-size: 20px;
 }
 
 #film h2 {
@@ -579,7 +578,7 @@ footer p {
     cursor: pointer;
 }
 
-#film .active-button {
+.active-button {
     background-image: url("../img/design-bkg-blue.jpg");
     color: white;
 }
@@ -624,6 +623,29 @@ footer p {
     margin-bottom: 3rem;
 }
 
+/* -------------------------------------------- */
+/*                    DESIGN                      */
+/* -------------------------------------------- */
+
+#design .row img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.spread-right {
+    padding-right: 0;
+    padding-left: 30px;
+}
+
+.spread-left {
+    padding-right: 30;
+    padding-left: 0px;
+}
+
+/* #print .row .col-md-4 img {
+    border: 1px solid #dedede;
+} */
+
 
 /* -------------------------------------------- */
 /*                    MEDIA                     */
@@ -639,13 +661,21 @@ footer p {
         margin: auto;
         padding-top: 70px;
     }
+
+    #index h1 {
+        font-size: 50px;
+    }
+
+    #index h2 {
+        font-size: 40px;
+    }
     
     .logo {
         position: absolute;
         margin: 10px;
     }
 
-    #projects .logo, #film .logo {
+    .logo-sm-center {
         top:0;
         left: 0;
         position: relative;
@@ -655,10 +685,6 @@ footer p {
 
     .header {
         padding-top: 5vh;
-    }
-
-    #about h1 {
-        text-align: center;
     }
 
     #projects .section {
@@ -674,5 +700,10 @@ footer p {
     
     #dark-overlay {
         z-index: 99;
+    }
+
+    footer {
+        padding-top: 3%;
+        padding-bottom: 3%;
     }
 }
