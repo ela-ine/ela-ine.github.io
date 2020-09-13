@@ -500,13 +500,13 @@ footer p {
     font-weight: 600;
 }
 
-#design-proj-header, #fabrication-header {
+#design-header, #fabrication-header {
     background-color: rgb(63, 109, 187, 0.6);
     background-blend-mode: screen;
     color: white;
 }
 
-#design-proj-header a {
+#design-header a {
     color: white;
     transition: 0.3s;
 }
