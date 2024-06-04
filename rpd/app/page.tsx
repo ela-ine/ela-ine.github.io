@@ -1,7 +1,7 @@
-import GoogleClient from "./google";
-import PlayerComponent, { Queue, useQueueContext } from "./video";
-import { Component, useEffect, useState } from 'react';
+import { Queue } from "./video";
 import getVideosFromPlaylist from "./google";
+import QueueVideos from "./video";
+import Player, { PlayerProvider } from "./player";
 
 // const google = new GoogleClient();
 
@@ -11,8 +11,11 @@ export default async function Home() {
     const videos = await getVideosFromPlaylist('PLSGEqKTEpB0Fcnt2VXFGrIZgSTMQnQ6Rf');
 
     return (
-        <Queue videos={videos}>
-            <PlayerComponent />
-        </Queue>
+        <PlayerProvider>
+            <Player video={videos[0]}></Player>
+            <Queue videos={videos}>
+                <QueueVideos />
+            </Queue>
+        </PlayerProvider>
     );
 }

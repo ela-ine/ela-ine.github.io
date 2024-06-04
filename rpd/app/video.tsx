@@ -1,7 +1,7 @@
 'use client';
 import { createContext, useContext, useEffect, useState } from 'react';
 import YouTube, { YouTubeEvent } from 'react-youtube';
-import { YouTubePlayer } from 'youtube-player/dist/types';
+import { usePlayerContext } from './player';
 
 export interface Video {
     id?: string,
@@ -9,15 +9,19 @@ export interface Video {
     channel?: string,
 }
 
-const QueueContext = createContext({ head: {}, queue: [], push: (_) => {}, pop: () => {}});
+interface QueueContextType {
+    head: Video,
+    queue: Video[],
+    push: (_: Video) => void,
+    pop: (_: void) => void
+}
+
+const QueueContext = createContext<QueueContextType | null>(null);
 export const useQueueContext = () => useContext(QueueContext);
 
 export function Queue({ children, videos }) {
     const [head, setHead] = useState<Video>(videos[0]);
     const [queue, setQueue] = useState<Video[]>(videos.slice(1));
-    useEffect(() => {
-        console.log('queue', head, queue); // Log the count after the state has been updated
-      }, [queue, head]); // Run this effect whenever the count state changes
 
     const popQueue = () => {
         if (queue.length == 0) {
@@ -41,35 +45,33 @@ export function Queue({ children, videos }) {
     )
 }
 
-export default function PlayerComponent() {
+export default function QueueVideos() {
     const { head, queue, push, pop } = useQueueContext();
-    const [player, setPlayer] = useState<YouTubePlayer>();
-    const playing: Video = head;
+    const { initialized, playerRef, stateEvent } = usePlayerContext();
 
-    console.log('playercomponent init...', queue.length);
+    console.log('queue videos init...', queue.length);
 
     const start = 0;
     const end = 5;
-    const options = {
-        width: "1280",
-        height: "720",
-        playerVars: {
-            start: start,
-            end: end,
-        },
-    }
 
     useEffect(() => {
-        console.log('useeffect', player);
-        if (player) {
+        if (initialized && playerRef?.current) {
             console.log('next playing...', head);
-            player.cueVideoById({
-                videoId: playing.id,
-                startSeconds: start,
-                endSeconds: end,
-            });
+            if (playerRef.current && head) {
+                playerRef.current.cueVideoById({
+                    videoId: head.id,
+                    startSeconds: start,
+                    endSeconds: end,
+                });
+            }
         }
     }, [head]);
+
+    useEffect(() => {
+        if (stateEvent) {
+            handleStateChange(stateEvent);
+        }
+    }, [stateEvent]);
 
     function addToQueue(video: Video) {
         push(video);
@@ -84,38 +86,22 @@ export default function PlayerComponent() {
         }
     }
 
-    const handleReady = (event: YouTubeEvent) => {
-        event.target.playVideo();
-        // setPlayer(event.target);
-        console.log('player ready!', playing);
-    }
+    const handleStateChange = (event: YouTubeEvent) => {
+        switch (event.data) {
+            case YouTube.PlayerState.CUED:
+                event.target.playVideo();
+                break;
+                
+            case YouTube.PlayerState.ENDED:
+                pop();
+                break;
 
-    const handleState = (event: YouTubeEvent) => {
-        console.log('playnext', event.data);
-
-        if (event.data == YouTube.PlayerState.CUED) {
-            event.target.playVideo();
-        }
-        
-        if (event.data == YouTube.PlayerState.ENDED) {
-            console.log('playnext', queue);
-            pop();
+            default:
+                break;
         }
     }
-    
-    if (!playing) {
-        return null;
-    }
 
-    const style = { width: "1500px", height: "800px", color: "yellow" };
-    return (
-        <div style={style}>
-            <YouTube
-                videoId={playing.id}
-                opts={options}
-                onReady={handleReady}
-                onStateChange={handleState}
-            />
-        </div>
+    return(
+        <p>{head ? head.title : "all done!"}</p>
     );
 }
