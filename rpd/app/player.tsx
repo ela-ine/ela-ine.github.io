@@ -1,14 +1,17 @@
 "use client"
-import { MutableRefObject, createContext, useContext, useRef, useState } from "react";
+import { MutableRefObject, createContext, memo, useContext, useEffect, useRef, useState } from "react";
 import YouTube, { YouTubeEvent } from "react-youtube";
 import { YouTubePlayer } from 'youtube-player/dist/types';
+import { Video } from './common';
 
 interface PlayerContextType {
     initialized: boolean,
+    playing: Video,
+    setPlaying: (_) => void,
     playerRef: MutableRefObject<null | YouTubePlayer>,
     setPlayerRef: (_) => void,
-    stateEvent?: YouTubeEvent,
-    setStateEvent: (_) => void,
+    endEvent?: YouTubeEvent,
+    setEndEvent: (_) => void,
 }
 
 const PlayerContext = createContext<PlayerContextType | null>(null);
@@ -23,27 +26,28 @@ export const usePlayerContext = () => {
 
 export function PlayerProvider({ children }) {
     const playerRef = useRef<null | YouTubePlayer>(null);
-    console.log("player context initializing...", playerRef);
-    const [stateEvent, setStateEvent] = useState();
+    const [endEvent, setEndEvent] = useState();
     const [initialized, setInitialized] = useState(false);
+    const [playing, setPlaying] = useState<Video>();
 
     const setPlayerRef = (r: YouTubePlayer) => {
         if (!initialized) {
             playerRef.current = r;
             setInitialized(true);
-            console.log("setting playerRef... ", playerRef.current);
         }
     };
 
     return (
-        <PlayerContext.Provider value={{ initialized, playerRef, setPlayerRef, stateEvent, setStateEvent }}>
+        <PlayerContext.Provider value={{ playing, setPlaying, initialized, playerRef, setPlayerRef, endEvent, setEndEvent }}>
             {children}
         </PlayerContext.Provider>
     );
 };
 
-export default function Player({ video }) {
-    const { setPlayerRef, setStateEvent } = usePlayerContext();
+const Player = memo(function Player(props: { video: Video, setPlayerRef, setEndEvent }) {
+    const { video , setPlayerRef, setEndEvent } = props;
+    console.log("player rendering...", video);
+    // const { setPlayerRef, setStateEvent } = usePlayerContext();
     const start = 0;
     const end = 5;
     const options = {
@@ -56,17 +60,19 @@ export default function Player({ video }) {
     }
 
     const onReady = async (event: YouTubeEvent) => {
-        await setTimeout(() => {
-            console.log("player ready!", event.target.videoTitle);
-            event.target.playVideo();
-            setPlayerRef(event.target);
-        }, 200);
+        console.log("player ready!", event.target.videoTitle);
+        event.target.playVideo();
+        setPlayerRef(event.target);
     }
 
     const onStateChange = (event: YouTubeEvent) => {
-        console.log('state change', event.data);
-        setPlayerRef(event.target);
-        setStateEvent(event);
+        if (event.data == YouTube.PlayerState.CUED) {
+            event.target.playVideo();
+        }
+    }
+
+    const onEnd = (event: YouTubeEvent) => {
+        setEndEvent(event);
     }
 
     return(
@@ -75,6 +81,9 @@ export default function Player({ video }) {
             opts={options}
             onReady={onReady}
             onStateChange={onStateChange}
+            onEnd={onEnd}
         />
     );
-}
+})
+
+export default Player

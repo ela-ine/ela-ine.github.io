@@ -1,6 +1,6 @@
 'use server';
 import { google } from "googleapis";
-import { Video } from "./video";
+import { Video } from "./common";
 
 const youtube = google.youtube({
     version: 'v3',
@@ -8,6 +8,7 @@ const youtube = google.youtube({
 });
 
 export default async function getVideosFromPlaylist(playlist) {
+    console.log("getting videos...")
     var videos: Video[] = [];
 
     var nextPageToken = '';

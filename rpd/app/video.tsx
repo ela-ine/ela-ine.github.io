@@ -45,27 +45,25 @@ export function Queue({ children, videos }) {
     )
 }
 
-export default function QueueVideos() {
-    const { head, queue, push, pop } = useQueueContext();
-    const { initialized, playerRef, stateEvent } = usePlayerContext();
-
-    console.log('queue videos init...', queue.length);
+export default function VideoQueue({ playing, pop, initialized, playerRef, stateEvent }) {
+    // const { head: playing, pop } = useQueueContext();
+    // const { initialized, playerRef, stateEvent } = usePlayerContext();
 
     const start = 0;
     const end = 5;
 
     useEffect(() => {
         if (initialized && playerRef?.current) {
-            console.log('next playing...', head);
-            if (playerRef.current && head) {
-                playerRef.current.cueVideoById({
-                    videoId: head.id,
-                    startSeconds: start,
-                    endSeconds: end,
-                });
-            }
+            console.log('next playing...', playing);
+            // if (playerRef.current && playing) {
+            //     playerRef.current.cueVideoById({
+            //         videoId: playing.id,
+            //         startSeconds: start,
+            //         endSeconds: end,
+            //     });
+            // }
         }
-    }, [head]);
+    }, [playing]);
 
     useEffect(() => {
         if (stateEvent) {
@@ -73,25 +71,8 @@ export default function QueueVideos() {
         }
     }, [stateEvent]);
 
-    function addToQueue(video: Video) {
-        push(video);
-    }
-
-    function removeFromQueue(id: string) {
-        const i = queue.findIndex((video) => {
-            video.id == id;
-        });
-        if (i >= 0) {
-            queue.splice(i, 1);
-        }
-    }
-
     const handleStateChange = (event: YouTubeEvent) => {
         switch (event.data) {
-            case YouTube.PlayerState.CUED:
-                event.target.playVideo();
-                break;
-                
             case YouTube.PlayerState.ENDED:
                 pop();
                 break;
@@ -102,6 +83,6 @@ export default function QueueVideos() {
     }
 
     return(
-        <p>{head ? head.title : "all done!"}</p>
+        <p>{playing ? playing.title : "all done!"}</p>
     );
 }
