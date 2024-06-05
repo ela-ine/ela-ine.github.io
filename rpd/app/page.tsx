@@ -1,25 +1,29 @@
 'use client'
 
-import { Video } from './common';
+import { Queue, Video } from "./video";
 import getVideosFromPlaylist from "./google";
 import VideoQueue from "./video";
 import Player, { PlayerProvider } from "./player";
 import { useContext, useEffect, useRef, useState } from 'react';
 import Input from "./input";
 import { YouTubePlayer } from 'youtube-player/dist/types';
-import { useStore } from 'zustand';
 
-export function PlayerComponent({ first, playing, videos, setPlaying, setVideos }) {
-    // const playerRef = useRef<null | YouTubePlayer>(null);
-    // const [endEvent, setEndEvent] = useState();
-    const [playerInitialized, setPlayerInitialized] = useState(false);
+// const google = new GoogleClient();
 
-    // const setPlayerRef = (r: YouTubePlayer) => {
-    //     if (!playerInitialized) {
-    //         playerRef.current = r;
-    //         setPlayerInitialized(true);
-    //     }
-    // };
+export function PlayerComponent({ playing, videos, setPlaying, setVideos }) {
+    console.log("playercomponent rerendering...", playing);
+
+    const playerRef = useRef<null | YouTubePlayer>(null);
+    const [endEvent, setEndEvent] = useState();
+    const [initialized, setInitialized] = useState(false);
+    const first: Video = { ...playing }
+
+    const setPlayerRef = (r: YouTubePlayer) => {
+        if (!initialized) {
+            playerRef.current = r;
+            setInitialized(true);
+        }
+    };
 
     const popQueue = () => {
         if (videos.length == 0) {
@@ -30,35 +34,35 @@ export function PlayerComponent({ first, playing, videos, setPlaying, setVideos 
         setVideos([...videos.slice(1)]);
     }
 
-    // player: first, 
-
     const pushQueue = (x) => {
         setVideos(prev => [x, ...prev]);
     }
 
     return (
         <PlayerProvider>
-            {playing && <VideoQueue 
+            <Player 
+                video={first} 
+                setPlayerRef={setPlayerRef} 
+                setEndEvent={setEndEvent} />
+            <VideoQueue 
                 playing={playing} 
                 pop={popQueue}
-                initialized={playerInitialized} />}
+                initialized={initialized}
+                stateEvent={endEvent}
+                playerRef={playerRef} />
         </PlayerProvider>
     );
 }
 
 export default function Home() {
-    console.log("home rendering...");
     const [videos, setVideos] = useState([]);
     const [playing, setPlaying] = useState<Video>();
-    const [first, setFirst] = useState<Video>();
+    console.log('home rendering...', playing, videos);
 
     const getVideos = async (id) => { 
         const playlist = await getVideosFromPlaylist(id);
         setPlaying(playlist[0]);
         setVideos(playlist.slice(1));
-        // if(!first.id) {
-            setFirst(playlist[0]);
-        // }
     };
 
     // Event handler to handle form submission
@@ -69,15 +73,13 @@ export default function Home() {
     return (
         <div>
             <Input initialValue={'PLSGEqKTEpB0FDOYLNSJeKrEZeIT_iehIh'} handleSubmit={handleSubmit}></Input>
+            {playing && 
             <PlayerComponent 
-                first={first}
                 playing={playing} 
                 videos={videos} 
                 setPlaying={setPlaying} 
                 setVideos={setVideos}>
-            </PlayerComponent>
-            {first && 
-            <Player video={first}/>}
+            </PlayerComponent>}
         </div>
     );
 }

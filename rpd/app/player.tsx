@@ -2,7 +2,7 @@
 import { MutableRefObject, createContext, memo, useContext, useEffect, useRef, useState } from "react";
 import YouTube, { YouTubeEvent } from "react-youtube";
 import { YouTubePlayer } from 'youtube-player/dist/types';
-import { Video, useStore } from './common';
+import { Video } from './common';
 
 interface PlayerContextType {
     initialized: boolean,
@@ -44,11 +44,8 @@ export function PlayerProvider({ children }) {
     );
 };
 
-const Player = memo(function Player(props: { video: Video }) {
-    const { setPlayer, setEndEvent } = useStore();
-    // const setPlayer = useStore((state) => state.setPlayer);
-    // const setEndEvent = useStore((state) => state.setEndEvent);
-    const { video } = props;
+const Player = memo(function Player(props: { video: Video, setPlayerRef, setEndEvent }) {
+    const { video , setPlayerRef, setEndEvent } = props;
     console.log("player rendering...", video);
     // const { setPlayerRef, setStateEvent } = usePlayerContext();
     const start = 0;
@@ -65,7 +62,7 @@ const Player = memo(function Player(props: { video: Video }) {
     const onReady = async (event: YouTubeEvent) => {
         console.log("player ready!", event.target.videoTitle);
         event.target.playVideo();
-        setPlayer(event.target);
+        setPlayerRef(event.target);
     }
 
     const onStateChange = (event: YouTubeEvent) => {
