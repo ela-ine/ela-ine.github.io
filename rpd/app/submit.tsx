@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function Submit({ initialValue, handleSubmit }) {
+export default function Submit({ label, initialValue, handleSubmit }) {
     const [val, setVal] = useState(initialValue || '');
     
     // Event handler to capture input value
@@ -18,6 +18,7 @@ export default function Submit({ initialValue, handleSubmit }) {
     
     return (
         <form onSubmit={onSubmit}>
+                <label>{label}</label>
                 <input type="text" value={val} onChange={handleInputChange} />
                 <button type="submit">Submit</button>
         </form>

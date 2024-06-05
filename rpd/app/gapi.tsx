@@ -7,7 +7,8 @@ const youtube = google.youtube({
     auth: process.env.GAPI_KEY,
 });
 
-export default async function getVideosFromPlaylist(playlist) {
+// gets videos by playlist id
+export async function getVideosFromPlaylist(playlist) {
     console.log("getting videos...")
     var videos: Video[] = [];
 
@@ -24,14 +25,33 @@ export default async function getVideosFromPlaylist(playlist) {
                 id: video.snippet.resourceId.videoId,
                 title: video.snippet.title,
                 channel: video.snippet.videoOwnerChannelTitle,
-            }
+            };
 
-            videos.push(v)
+            videos.push(v);
         })
 
         nextPageToken = response.data.nextPageToken;
     }
 
     return videos;
+}
+
+// gets video by id
+export async function getVideo(id: string) {
+    const response = await youtube.videos.list({
+        part: ['snippet'],
+        id: [id],
+        maxResults: 1
+    })
+
+    if (response.data.items.length > 0) {
+        const snippet = response.data.items[0].snippet;
+        const v: Video = {
+            id: id,
+            title: snippet.title,
+            channel: snippet.channelTitle,
+        };
+        return v;
+    }
 }
     
