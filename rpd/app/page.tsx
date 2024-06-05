@@ -1,12 +1,12 @@
 'use client'
 
-import { Queue, Video } from "./video";
-import getVideosFromPlaylist from "./google";
-import VideoQueue from "./video";
-import Player, { PlayerProvider } from "./player";
-import { useContext, useEffect, useRef, useState } from 'react';
-import Input from "./input";
+import { useRef, useState } from 'react';
 import { YouTubePlayer } from 'youtube-player/dist/types';
+import { Video } from './common';
+import VideoQueue from "./queue";
+import getVideosFromPlaylist from "./google";
+import Player, { PlayerProvider } from "./player";
+import Submit from './input';
 
 // const google = new GoogleClient();
 
@@ -72,7 +72,7 @@ export default function Home() {
 
     return (
         <div>
-            <Input initialValue={'PLSGEqKTEpB0FDOYLNSJeKrEZeIT_iehIh'} handleSubmit={handleSubmit}></Input>
+            <Submit initialValue={'PLSGEqKTEpB0FDOYLNSJeKrEZeIT_iehIh'} handleSubmit={handleSubmit}></Submit>
             {playing && 
             <PlayerComponent 
                 playing={playing} 

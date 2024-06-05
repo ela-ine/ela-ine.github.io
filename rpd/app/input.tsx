@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from 'react';
+import { useState } from 'react';
 
-export default function Input({ initialValue, handleSubmit }) {
+export default function Submit({ initialValue, handleSubmit }) {
     const [val, setVal] = useState(initialValue || '');
     
     // Event handler to capture input value
