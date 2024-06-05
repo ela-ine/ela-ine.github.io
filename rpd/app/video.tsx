@@ -2,12 +2,8 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import YouTube, { YouTubeEvent } from 'react-youtube';
 import { usePlayerContext } from './player';
+import { Video, useStore } from './common';
 
-export interface Video {
-    id?: string,
-    title?: string,
-    channel?: string,
-}
 
 interface QueueContextType {
     head: Video,
@@ -45,31 +41,37 @@ export function Queue({ children, videos }) {
     )
 }
 
-export default function VideoQueue({ playing, pop, initialized, playerRef, stateEvent }) {
+export default function VideoQueue({ playing, pop, initialized }) {
     // const { head: playing, pop } = useQueueContext();
     // const { initialized, playerRef, stateEvent } = usePlayerContext();
+
+    const endEvent = useStore(state => state.endEvent);
+    const player = useStore(state => state.player);
 
     const start = 0;
     const end = 5;
 
     useEffect(() => {
-        if (initialized && playerRef?.current) {
-            console.log('next playing...', playing);
+        if (playing && initialized && player) {
+            // if (playing && initialized && playerRef?.current) {
+            console.log('useeffect playing triggered!');
+            // playerRef.current;
             // if (playerRef.current && playing) {
-            //     playerRef.current.cueVideoById({
-            //         videoId: playing.id,
-            //         startSeconds: start,
-            //         endSeconds: end,
-            //     });
+                player.cueVideoById({
+                    // playerRef.current.cueVideoById({
+                    videoId: playing.id,
+                    startSeconds: start,
+                    endSeconds: end,
+                });
             // }
         }
     }, [playing]);
 
     useEffect(() => {
-        if (stateEvent) {
-            handleStateChange(stateEvent);
+        if (endEvent) {
+            handleStateChange(endEvent);
         }
-    }, [stateEvent]);
+    }, [endEvent]);
 
     const handleStateChange = (event: YouTubeEvent) => {
         switch (event.data) {
